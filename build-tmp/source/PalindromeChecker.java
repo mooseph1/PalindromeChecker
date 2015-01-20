@@ -32,10 +32,24 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  String fool = new String();
+  for(int i = 0; i < word.length(); i++)
+    {
+      if(Character.isLetter(word.charAt(i)) == true)
+      {
+        fool = fool + word.charAt(i);
+      }
+    }
+  fool = fool.toLowerCase();
+  for(int i = 0; i < (fool.length()/2); i++)
+  {
+    if(fool.charAt(i) != fool.charAt(fool.length() - (i +1)))
+    {
+      return false;
+    }
+  }
+  return true;
 }
-
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "PalindromeChecker" };
     if (passedArgs != null) {
